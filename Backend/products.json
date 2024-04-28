@@ -1,0 +1,742 @@
+[
+    {
+        "name": "Floral Print Top",
+        "category": "women",
+        "sub_cat": "tops",
+        "size": "M",
+        "color": "Blue",
+        "material": "Cotton",
+        "brand": "Athena",
+        "price": 150
+    },
+    {
+        "name": "Striped Cotton Top",
+        "category": "women",
+        "sub_cat": "tops",
+        "size": "S",
+        "color": "Red",
+        "material": "Cotton",
+        "brand": "Zara",
+        "price": 160
+    },
+    {
+        "name": "Lace Trim Top",
+        "category": "women",
+        "sub_cat": "tops",
+        "size": "S",
+        "color": "Pink",
+        "material": "Polyester",
+        "brand": "H&M",
+        "price": 140
+    },
+    {
+        "name": "Polka Dot Top",
+        "category": "women",
+        "sub_cat": "tops",
+        "size": "M",
+        "color": "Black",
+        "material": "Viscose",
+        "brand": "Forever 21",
+        "price": 130
+    },
+    {
+        "name": "Winter Coat",
+        "category": "women",
+        "sub_cat": "coats",
+        "size": "L",
+        "color": "Black",
+        "material": "Wool",
+        "brand": "Burberry",
+        "price": 400
+    },
+    {
+        "name": "Trench Coat",
+        "category": "women",
+        "sub_cat": "coats",
+        "size": "M",
+        "color": "Beige",
+        "material": "Cotton",
+        "brand": "Gap",
+        "price": 440
+    },
+    {
+        "name": "Faux Fur Coat",
+        "category": "women",
+        "sub_cat": "coats",
+        "size": "L",
+        "color": "White",
+        "material": "Acrylic",
+        "brand": "Topshop",
+        "price": 450
+    },
+    {
+        "name": "Denim Jacket",
+        "category": "women",
+        "sub_cat": "coats",
+        "size": "M",
+        "color": "Blue",
+        "material": "Denim",
+        "brand": "Levi's",
+        "price": 490
+    },
+    {
+        "name": "Floral Maxi Dress",
+        "category": "women",
+        "sub_cat": "dresses",
+        "size": "M",
+        "color": "Green",
+        "material": "Silk",
+        "brand": "Anokhi",
+        "price": 250
+    },
+    {
+        "name": "Lace Mini Dress",
+        "category": "women",
+        "sub_cat": "dresses",
+        "size": "S",
+        "color": "Black",
+        "material": "Lace",
+        "brand": "Nicobar",
+        "price": 240
+    },
+    {
+        "name": "Salwar Kameez",
+        "category": "women",
+        "sub_cat": "traditionals",
+        "size": "M",
+        "color": "Red",
+        "material": "Cotton",
+        "brand": "Biba",
+        "price": 200
+    },
+    {
+        "name": "Saree",
+        "category": "women",
+        "sub_cat": "traditionals",
+        "size": "One Size",
+        "color": "Blue",
+        "material": "Silk",
+        "brand": "Nalli",
+        "price": 450
+    },
+    {
+        "name": "Skinny Jeans",
+        "category": "women",
+        "sub_cat": "bottomwear",
+        "size": "M",
+        "color": "Black",
+        "material": "Denim",
+        "brand": "Lee",
+        "price": 300
+    },
+    {
+        "name": "Pleated Skirt",
+        "category": "women",
+        "sub_cat": "bottomwear",
+        "size": "S",
+        "color": "Pink",
+        "material": "Cotton",
+        "brand": "Fabindia",
+        "price": 190
+    },
+    {
+        "name": "Casual Shirt",
+        "category": "men",
+        "sub_cat": "shirts",
+        "size": "L",
+        "color": "White",
+        "material": "Cotton",
+        "brand": "Tommy Hilfiger",
+        "price": 180
+    },
+    {
+        "name": "Formal Shirt",
+        "category": "men",
+        "sub_cat": "shirts",
+        "size": "M",
+        "color": "Black",
+        "material": "Cotton",
+        "brand": "Raymond",
+        "price": 240
+    },
+    {
+        "name": "Checked Shirt",
+        "category": "men",
+        "sub_cat": "shirts",
+        "size": "L",
+        "color": "Red",
+        "material": "Flannel",
+        "brand": "Wrangler",
+        "price": 230
+    },
+    {
+        "name": "Plain Shirt",
+        "category": "men",
+        "sub_cat": "shirts",
+        "size": "M",
+        "color": "Blue",
+        "material": "Linen",
+        "brand": "Arrow",
+        "price": 210
+    },
+    {
+        "name": "Chinos",
+        "category": "men",
+        "sub_cat": "bottomwear",
+        "size": "L",
+        "color": "Beige",
+        "material": "Cotton",
+        "brand": "United Colors of Benetton",
+        "price": 250
+    },
+    {
+        "name": "Jeans",
+        "category": "men",
+        "sub_cat": "bottomwear",
+        "size": "M",
+        "color": "Blue",
+        "material": "Denim",
+        "brand": "Pepe Jeans",
+        "price": 290
+    },
+    {
+        "name": "Kurta",
+        "category": "men",
+        "sub_cat": "traditionals",
+        "size": "L",
+        "color": "White",
+        "material": "Cotton",
+        "brand": "Manyavar",
+        "price": 280
+    },
+    {
+        "name": "Sherwani",
+        "category": "men",
+        "sub_cat": "traditionals",
+        "size": "M",
+        "color": "Gold",
+        "material": "Silk",
+        "brand": "Sabyasachi",
+        "price": 450
+    },
+    {
+        "name": "Blazer",
+        "category": "men",
+        "sub_cat": "coats",
+        "size": "L",
+        "color": "Navy",
+        "material": "Wool",
+        "brand": "Blackberrys",
+        "price": 360
+    },
+    {
+        "name": "Leather Jacket",
+        "category": "men",
+        "sub_cat": "coats",
+        "size": "M",
+        "color": "Brown",
+        "material": "Leather",
+        "brand": "Woodland",
+        "price": 370
+    },
+    {
+        "name": "T-shirt",
+        "category": "kids",
+        "sub_cat": "tops",
+        "size": "S",
+        "color": "Green",
+        "material": "Cotton",
+        "brand": "Gini & Jony",
+        "price": 170
+    },
+    {
+        "name": "V-neck top",
+        "category": "kids",
+        "sub_cat": "tops",
+        "size": "M",
+        "color": "Grey",
+        "material": "Wool",
+        "brand": "Mothercare",
+        "price": 190
+    },
+    {
+        "name": "T-shirt",
+        "category": "kids",
+        "sub_cat": "tops",
+        "size": "S",
+        "color": "Pink",
+        "material": "Cotton",
+        "brand": "Lilliput",
+        "price": 180
+    },
+    {
+        "name": "Butterfly top",
+        "category": "kids",
+        "sub_cat": "tops",
+        "size": "M",
+        "color": "Purple",
+        "material": "Wool",
+        "brand": "Cherry Crumble",
+        "price": 199
+    },
+    {
+        "name": "Hoodie",
+        "category": "kids",
+        "sub_cat": "coats",
+        "size": "S",
+        "color": "Blue",
+        "material": "Cotton",
+        "brand": "U.S. Polo Assn.",
+        "price": 280
+    },
+    {
+        "name": "Parka",
+        "category": "kids",
+        "sub_cat": "coats",
+        "size": "M",
+        "color": "Black",
+        "material": "Nylon",
+        "brand": "Next",
+        "price": 270
+    },
+    {
+        "name": "Cardigan",
+        "category": "kids",
+        "sub_cat": "coats",
+        "size": "S",
+        "color": "White",
+        "material": "Cotton",
+        "brand": "Nauti Nati",
+        "price": 280
+    },
+    {
+        "name": "Jacket",
+        "category": "kids",
+        "sub_cat": "coats",
+        "size": "M",
+        "color": "Black",
+        "material": "Polyester",
+        "brand": "Allen Solly Junior",
+        "price": 270
+    },
+    {
+        "name": "Kurta Pyjama",
+        "category": "kids",
+        "sub_cat": "traditionals",
+        "size": "S",
+        "color": "Yellow",
+        "material": "Cotton",
+        "brand": "Manyavar",
+        "price": 250
+    },
+    {
+        "name": "Dhoti",
+        "category": "kids",
+        "sub_cat": "traditionals",
+        "size": "M",
+        "color": "White",
+        "material": "Cotton",
+        "brand": "Fabindia",
+        "price": 190
+    },
+    {
+        "name": "Lehenga",
+        "category": "kids",
+        "sub_cat": "traditionals",
+        "size": "S",
+        "color": "Red",
+        "material": "Silk",
+        "brand": "Biba",
+        "price": 590
+    },
+    {
+        "name": "Salwar Kameez",
+        "category": "kids",
+        "sub_cat": "traditionals",
+        "size": "M",
+        "color": "Blue",
+        "material": "Cotton",
+        "brand": "Anokhi",
+        "price": 280
+    },
+    {
+        "name": "Shorts",
+        "category": "kids",
+        "sub_cat": "bottomwear",
+        "size": "S",
+        "color": "Red",
+        "material": "Cotton",
+        "brand": "Gini & Jony",
+        "price": 190
+    },
+    {
+        "name": "Jeans",
+        "category": "kids",
+        "sub_cat": "bottomwear",
+        "size": "M",
+        "color": "Blue",
+        "material": "Denim",
+        "brand": "Flying Machine",
+        "price": 270
+    },
+    {
+        "name": "Skirt",
+        "category": "kids",
+        "sub_cat": "bottomwear",
+        "size": "S",
+        "color": "Yellow",
+        "material": "Cotton",
+        "brand": "Beebay",
+        "price": 210
+    },
+    {
+        "name": "Leggings",
+        "category": "kids",
+        "sub_cat": "bottomwear",
+        "size": "M",
+        "color": "Black",
+        "material": "Cotton",
+        "brand": "Hopscotch",
+        "price": 170
+    },
+    {
+        "name": "Floral Dress",
+        "category": "kids",
+        "sub_cat": "dresses",
+        "size": "S",
+        "color": "Pink",
+        "material": "Cotton",
+        "brand": "Cutecumber",
+        "price": 210
+    },
+    {
+        "name": "Lace Dress",
+        "category": "kids",
+        "sub_cat": "dresses",
+        "size": "M",
+        "color": "White",
+        "material": "Lace",
+        "brand": "Peach Girl",
+        "price": 220
+    },
+    {
+        "name": "Rubber Slippers",
+        "category": "footwear",
+        "sub_cat": "slippers",
+        "size": "8",
+        "color": "Green",
+        "material": "Rubber",
+        "brand": "Crocs",
+        "price": 90
+    },
+    {
+        "name": "Fur Slippers",
+        "category": "footwear",
+        "sub_cat": "slippers",
+        "size": "9",
+        "color": "Pink",
+        "material": "Fur",
+        "brand": "Ugg",
+        "price": 110
+    },
+    {
+        "name": "Classic Crocs",
+        "category": "footwear",
+        "sub_cat": "crocs",
+        "size": "8",
+        "color": "Blue",
+        "material": "Rubber",
+        "brand": "Crocs",
+        "price": 220
+    },
+    {
+        "name": "Fuzzy Crocs",
+        "category": "footwear",
+        "sub_cat": "crocs",
+        "size": "9",
+        "color": "Purple",
+        "material": "Fur",
+        "brand": "Crocs",
+        "price": 240
+    },
+    {
+        "name": "Sneakers",
+        "category": "footwear",
+        "sub_cat": "shoes",
+        "size": "8",
+        "color": "White",
+        "material": "Leather",
+        "brand": "Nike",
+        "price": 690
+    },
+    {
+        "name": "Boots",
+        "category": "footwear",
+        "sub_cat": "shoes",
+        "size": "9",
+        "color": "Black",
+        "material": "Leather",
+        "brand": "Timberland",
+        "price": 340
+    },
+    {
+        "name": "Stylish block Heels",
+        "category": "footwear",
+        "sub_cat": "heels",
+        "size": "6",
+        "color": "White",
+        "material": "Leather",
+        "brand": "Steve Madden",
+        "price": 350
+    },
+    {
+        "name": "Pencil heels",
+        "category": "footwear",
+        "sub_cat": "heels",
+        "size": "6",
+        "color": "black",
+        "material": "Suede",
+        "brand": "Jimmy Choo",
+        "price": 380
+    },
+    {
+        "name": "Leather Backpack",
+        "category": "accessories",
+        "sub_cat": "bags",
+        "size": "M",
+        "color": "Brown",
+        "material": "Leather",
+        "brand": "Michael Kors",
+        "price": 320
+    },
+    {
+        "name": "Canvas Messenger Bag",
+        "category": "accessories",
+        "sub_cat": "bags",
+        "size": "L",
+        "color": "Black",
+        "material": "Canvas",
+        "brand": "Tommy Hilfiger",
+        "price": 310
+    },
+    {
+        "name": "Tote Bag",
+        "category": "accessories",
+        "sub_cat": "bags",
+        "size": "M",
+        "color": "Beige",
+        "material": "Cotton",
+        "brand": "H&M",
+        "price": 290
+    },
+    {
+        "name": "Clutch Bag",
+        "category": "accessories",
+        "sub_cat": "bags",
+        "size": "S",
+        "color": "Red",
+        "material": "Silk",
+        "brand": "Guchi",
+        "price": 280
+    },
+    {
+        "name": "Silver Band Ring",
+        "category": "accessories",
+        "sub_cat": "rings",
+        "size": "10",
+        "color": "Silver",
+        "material": "steel",
+        "brand": "Tiffany & Co.",
+        "price": 110
+    },
+    {
+        "name": "Gold Signet Ring",
+        "category": "accessories",
+        "sub_cat": "rings",
+        "size": "11",
+        "color": "Gold",
+        "material": "steel",
+        "brand": "Cartier",
+        "price": 120
+    },
+    {
+        "name": "Diamond Ring",
+        "category": "accessories",
+        "sub_cat": "rings",
+        "size": "6",
+        "color": "Silver",
+        "material": "steel",
+        "brand": "De Beers",
+        "price": 100
+    },
+    {
+        "name": "Pearl Ring",
+        "category": "accessories",
+        "sub_cat": "rings",
+        "size": "7",
+        "color": "Gold",
+        "material": "steel",
+        "brand": "Mikimoto",
+        "price": 122
+    },
+    {
+        "name": "Leather Bracelet",
+        "category": "accessories",
+        "sub_cat": "bracelets",
+        "size": "M",
+        "color": "Black",
+        "material": "Synthetic Leather",
+        "brand": "Fossil",
+        "price": 80
+    },
+    {
+        "name": "Beaded Bracelet",
+        "category": "accessories",
+        "sub_cat": "bracelets",
+        "size": "L",
+        "color": "Multicolor",
+        "material": "Glass",
+        "brand": "Swarovski",
+        "price": 70
+    },
+    {
+        "name": "Charm Bracelet",
+        "category": "accessories",
+        "sub_cat": "bracelets",
+        "size": "M",
+        "color": "Silver",
+        "material": "steel",
+        "brand": "Pandora",
+        "price": 60
+    },
+    {
+        "name": "Cuff Bracelet",
+        "category": "accessories",
+        "sub_cat": "bracelets",
+        "size": "L",
+        "color": "Gold",
+        "material": "steel",
+        "brand": "Hermes",
+        "price": 80
+    },
+    {
+        "name": "Fedora Hat",
+        "category": "accessories",
+        "sub_cat": "hats",
+        "size": "M",
+        "color": "Grey",
+        "material": "Wool",
+        "brand": "Stetson",
+        "price": 85
+    },
+    {
+        "name": "Baseball Cap",
+        "category": "accessories",
+        "sub_cat": "hats",
+        "size": "L",
+        "color": "Blue",
+        "material": "Cotton",
+        "brand": "Nike",
+        "price": 70
+    },
+    {
+        "name": "Beret Hat",
+        "category": "accessories",
+        "sub_cat": "hats",
+        "size": "M",
+        "color": "Black",
+        "material": "Wool",
+        "brand": "Kangol",
+        "price": 89
+    },
+    {
+        "name": "Sun Hat",
+        "category": "accessories",
+        "sub_cat": "hats",
+        "size": "L",
+        "color": "White",
+        "material": "Straw",
+        "brand": "Scala",
+        "price": 79
+    },
+    {
+        "name": "Aviator Sunglasses",
+        "category": "accessories",
+        "sub_cat": "shades",
+        "size": "M",
+        "color": "Black",
+        "material": "Metal",
+        "brand": "Ray-Ban",
+        "price": 69
+    },
+    {
+        "name": "Wayfarer Sunglasses",
+        "category": "accessories",
+        "sub_cat": "shades",
+        "size": "L",
+        "color": "Brown",
+        "material": "Plastic",
+        "brand": "Oakley",
+        "price": 65
+    },
+    {
+        "name": "Cat Eye Sunglasses",
+        "category": "accessories",
+        "sub_cat": "shades",
+        "size": "M",
+        "color": "Black",
+        "material": "Plastic",
+        "brand": "Prada",
+        "price": 70
+    },
+    {
+        "name": "Round Sunglasses",
+        "category": "accessories",
+        "sub_cat": "shades",
+        "size": "L",
+        "color": "Pink",
+        "material": "Metal",
+        "brand": "Chanel",
+        "price": 75
+    },
+    {
+        "name": "Wooden Bangles",
+        "category": "accessories",
+        "sub_cat": "bangles",
+        "size": "M",
+        "color": "Brown",
+        "material": "Wood",
+        "brand": "Woodland",
+        "price": 40
+    },
+    {
+        "name": "Metal Bangles",
+        "category": "accessories",
+        "sub_cat": "bangles",
+        "size": "L",
+        "color": "Silver",
+        "material": "Metal",
+        "brand": "Zara",
+        "price": 99
+    },
+    {
+        "name": "Stud Earrings",
+        "category": "accessories",
+        "sub_cat": "earring",
+        "size": "S",
+        "color": "White",
+        "material": "Pearl",
+        "brand": "Mikimoto",
+        "price": 40
+    },
+    {
+        "name": "Hoop Earrings",
+        "category": "accessories",
+        "sub_cat": "earring",
+        "size": "M",
+        "color": "Gold",
+        "material": "Gold",
+        "brand": "Cartier",
+        "price": 35
+    }
+]

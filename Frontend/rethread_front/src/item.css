@@ -1,0 +1,17 @@
+.zoomed-image-overlay {
+    position: absolute;
+    /* Adjust the position of the overlay relative to the cursor */
+    transform: translate(-50%, -50%);
+    /* Center the overlay at the cursor position */
+    width: 450px; /* Adjust width as needed */
+    height: 450px; /* Adjust height as needed */
+    background-color: white; /* Add background color as needed */
+    z-index: 999; /* Ensure overlay is on top of other elements */
+    overflow: hidden; /* Ensures the image fits within the overlay */
+}
+
+.zoomed-image-overlay img {
+    width: 100%; /* Ensure image fills overlay */
+    height: 100%; /* Ensure image fills overlay */
+    object-fit: cover; /* Ensures the image covers the entire area */
+}

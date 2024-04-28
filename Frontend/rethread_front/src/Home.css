@@ -1,0 +1,57 @@
+.home-container {
+  background-image: url('./mainback.avif');
+  background-size: cover;
+  margin-top: 0%;
+  height: 100vh;
+  width: 100%;
+}
+
+.animate_zoomIn {
+  position: absolute;
+  color: azure;
+  font-size: 85px;
+  /* Adjust this for different devices */
+  font-weight: bolder;
+  margin-top: 252px;
+  /* Adjust this for different devices */
+  margin-left: 590px;
+  /* Adjust this for different devices */
+  margin-bottom: 0;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate_zoomIn {
+  animation: slideInFromTop 1s ease-out;
+}
+
+/* For tablets */
+@media (max-width: 768px) {
+  .animate_zoomIn {
+    font-size: 60px;
+    margin-top: 160px;
+    margin-left: 400px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .animate_zoomIn {
+    font-size: 30px;
+    margin-top: 80px;
+    margin-left: 200px;
+  }
+}

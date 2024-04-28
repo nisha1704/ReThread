@@ -18,27 +18,35 @@ function Cart() {
   const [cartItems, setCartItems] = useState([]);
   
   async function updateCart () {
-    // console.log(email);
+    console.log(user.email);
     const pro = await axios.get("http://localhost:10000/getCart/"+user.email);
     const res = await pro.data;
+    const proResell = await axios.get("http://localhost:10000/getResellCart/"+user.email);
+    console.log(await proResell);
+    const resResell = await proResell.data;
     console.log(await res);
     res.map(async(val)=>{
       let data = await axios.get("http://localhost:10000/product-by-id/"+await val);
       console.log(data.data);
       setCartItems(prev => [...prev, {title: data.data.product_name, image: data.data.front_img, price: data.data.price, size: 's'}]);
     });
+    resResell.map(async(val)=>{
+      let data = await axios.get("http://localhost:10000/resell-by-id/"+await val);
+      console.log(data.data);
+      setCartItems(prev => [...prev, {id: data.data._id, title: data.data.product_name, image: data.data.img_front, price: data.data.resell_price, size: data.data.size}]);
+    });
   }
 
   useEffect(() => {
     
-    updateCart();
+    if(user.email!=="") updateCart();
     // const newTotalQuantity = cartItems.length;
     // setTotalQuantity(newTotalQuantity);
     // setCartItems(newCart);
     // console.log(newCart);
     // console.log(cartItems);
 
-  }, []);
+  }, [user.email]);
 
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
   
@@ -52,11 +60,15 @@ function Cart() {
   };
 
   const handleDeleteItem = async (product_name) => {
-    console.log("deleting...");
-    console.log(product_name);
-    const res = await axios.get("http://localhost:10000/deleteCart/ak23amit@gmail.com/"+product_name);
+    const res = await axios.get("http://localhost:10000/deleteCart/"+user.email+"/"+product_name);
     updateCart();
     setCartItems(prev => prev.filter(val => product_name===val.product_name));
+  };
+
+  const handleDeleteResellItem = async (id) => {
+    const res = await axios.get("http://localhost:10000/deleteResellCart/"+user.email+"/"+id);
+    updateCart();
+    setCartItems(prev => prev.filter(val => id===val.id));
   };
 
   return (
@@ -73,7 +85,7 @@ function Cart() {
         justifyContent: 'space-between', // Align items to flex-end
       }}>
         <div style={{ flex: 1, padding: '20px' }}>
-          {cartItems.length === 0 ? (
+          {user.email==="" ? <div style={{color: 'red'}}>Please Login</div> : <>{cartItems.length === 0 ? (
             // Render empty cart image when the cart is empty
             <Card>
               <CardContent>
@@ -91,12 +103,12 @@ function Cart() {
                   <Typography variant="body2">Size: {item.size}</Typography>
                   <Typography variant="body2">Price: Rs {item.price}</Typography>
                 </CardContent>
-                <IconButton style={{ marginLeft: 'auto', marginRight: '30px', height:'40px', marginTop:'8%' }} onClick={() => handleDeleteItem(item.title)} color="error">
+                <IconButton style={{ marginLeft: 'auto', marginRight: '30px', height:'40px', marginTop:'8%' }} onClick={() => {if(!item.id) handleDeleteItem(item.title); else handleDeleteResellItem(item.id)}} color="error">
                   <DeleteIcon />
                 </IconButton>
               </Card>
             ))
-          )}
+          )}</>}
         </div>
 
         {/* Bottombar */}

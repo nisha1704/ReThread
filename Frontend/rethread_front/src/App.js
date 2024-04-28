@@ -19,7 +19,7 @@ import Orders from './Orders';
 import ModifyUserDetails from './ModifyUserDetails';
 import ModifyProductDetails from './ModifyProductDetails';
 import Subcategory from './Subcategory';
-
+import ResellItem from './ResellItem';
 
 
 // Create AppContext
@@ -38,6 +38,7 @@ function App() {
     earning:0,
     cart:[],
     orders:[],
+    resell_cart:[],
     password:null
   });
   return (
@@ -52,6 +53,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/resell-products" element={<Resell />} />
+          <Route path="/resellitem/:id" element={<ResellItem />} />
           <Route path="/products/:category/:subcat" element={<Products />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/selling-form" element={<SellingForm />} />

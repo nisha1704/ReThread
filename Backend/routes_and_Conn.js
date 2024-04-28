@@ -120,6 +120,10 @@ const UserSchema = new Schema2({
     type:[String],
     default:[]
   },
+  resell_cart:{
+    type:[String],
+    default:[]
+  },
   orders:{
     type:[String],
     default:[]
@@ -128,6 +132,9 @@ const UserSchema = new Schema2({
     type: String,
     required: true,
     trim: true,
+  },
+  profile_img:{
+    type: String,
   }
 })
 
@@ -454,6 +461,20 @@ app.get("/addCart/:email/:pid", async (req, res) => {
     res.status(500).send(error);
   }
 })
+app.get("/addResellCart/:email/:pid", async (req, res) => {
+  const email = req.params.email;
+  const pid = req.params.pid;
+  try {
+    const updatedUser = await Users.findOneAndUpdate({email: email}, {$push: {resell_cart: pid}}, { new: true });
+    if (updatedUser) {
+      res.send(`${updatedUser.email} updated`);
+    } else {
+      res.status(404).send("User not found");
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+})
 
 app.get("/getCart/:email", async (req, res) => {
   const email = req.params.email;
@@ -461,6 +482,19 @@ app.get("/getCart/:email", async (req, res) => {
     const user = await Users.findOne({email: email});
     if(user){
       res.json(user.cart);
+    }else{
+      console.log("Not found");
+    }
+  }catch(error){
+    console.log(error);
+  }
+})
+app.get("/getResellCart/:email", async (req, res) => {
+  const email = req.params.email;
+  try {
+    const user = await Users.findOne({email: email});
+    if(user){
+      res.json(user.resell_cart);
     }else{
       console.log("Not found");
     }
@@ -485,12 +519,60 @@ app.get("/product-by-id/:id", async (req, res) => {
   }
 });
 
+app.get("/resell-by-id/:id", async (req, res) => {
+  const id = req.params.id;
+  // console.log(id);
+  try{
+    const product = await Resell.findById(id);
+    if(product){
+      res.json(product);
+    }else{
+      res.status(404).send('Product not found');
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 app.get("/deleteCart/:email/:product_name", async (req, res) => {
   const email = req.params.email;
   const pid = req.params.product_name;
   console.log(pid);
   try {
     const updatedUser = await Users.findOneAndUpdate({email: email}, {$pull: {cart: pid}}, { new: true });
+    if (updatedUser) {
+      res.send(`${updatedUser.email} updated`);
+    } else {
+      res.status(404).send("User not found");
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+})
+
+app.put('/updateUser', async (req, res) => {
+  const email = req.body.email;
+  try {
+      // Find the user by ID and update details
+      const user = await Users.findOneAndUpdate({email: email}, req.body, { new: true });
+
+      if (!user) {
+          return res.status(404).json({ error: 'User not found' });
+      }
+
+      return res.json(user);
+  } catch (error) {
+      console.error("Error updating user:", error);
+      return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get("/deleteResellCart/:email/:product_id", async (req, res) => {
+  const email = req.params.email;
+  const pid = req.params.product_id;
+  console.log(pid);
+  try {
+    const updatedUser = await Users.findOneAndUpdate({email: email}, {$pull: {resell_cart: pid}}, { new: true });
     if (updatedUser) {
       res.send(`${updatedUser.email} updated`);
     } else {

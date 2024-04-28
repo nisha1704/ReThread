@@ -52,6 +52,12 @@ export default function Navbar() {
             </Button>
           </NavLink>
 
+          <NavLink to="/resell-products" style={{ textDecoration: 'none', color: 'black' }}>
+            <Button className={currentButton === 'shop' ? 'current' : ''} color="inherit" sx={{ color: 'black', fontWeight: 'bold', mx: 2 }} onClick={() => handleButtonClick('shop')}>
+              Resell Products
+            </Button>
+          </NavLink>
+
           <NavLink to="/shop" style={{ textDecoration: 'none', color: 'black' }}>
             <Button className={currentButton === 'shop' ? 'current' : ''} color="inherit" sx={{ color: 'black', fontWeight: 'bold', mx: 2 }} onClick={() => handleButtonClick('shop')}>
               Shop

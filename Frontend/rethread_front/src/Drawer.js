@@ -14,8 +14,10 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom'
+import { AppContext } from './App';
 
 export default function TemporaryDrawer() {
+    const {user} = React.useContext(AppContext);
     const [state, setState] = React.useState({
         right: false,
     });
@@ -38,12 +40,9 @@ export default function TemporaryDrawer() {
 
             {/* Top section with username and ReThread earning */}
             <Box sx={{ padding: '16px', backgroundColor: '#4d3d18', textAlign: 'center', color: 'white' }}>
-                <Avatar />
+                <Avatar src={user.profile_img} />
                 <Typography variant="subtitle1" sx={{ marginTop: '8px', fontWeight: 'bold', fontSize: '22px' }}>
-                    User {/* Replace with the actual username */}
-                </Typography>
-                <Typography variant="body2">
-                    ReThread Earning: Rs 0.00 {/* Replace with the actual earning */}
+                    {user.user_name} {/* Replace with the actual username */}
                 </Typography>
             </Box>
 
@@ -61,19 +60,7 @@ export default function TemporaryDrawer() {
                 ))}
             </List>
             <Divider />
-            <List>
-                {['Modify User Details', 'Modify Product Details'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton component={Link} to={`./${text.replace(/\s+/g, '-').toLowerCase()}`}>
-                            {/* Replace spaces with hyphens and convert to lowercase for better URLs */}
-                            <ListItemIcon>
-                                <EditIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
+            
         </Box>
     );
 
@@ -82,7 +69,7 @@ export default function TemporaryDrawer() {
 
             {['right'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)} style={{ color: 'white' }}><Avatar /></Button>
+                    <Button onClick={toggleDrawer(anchor, true)} style={{ color: 'white' }}><Avatar src={user.profile_img}/></Button>
                     <Drawer
                         anchor={anchor}
                         open={state[anchor]}

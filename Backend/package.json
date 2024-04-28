@@ -6,10 +6,6 @@
   "scripts": {
     "test": "This is test command"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Deepanshi03/re_thread.git"
-  },
   "keywords": [
     "rethread",
     "backend",
@@ -20,12 +16,8 @@
     "node",
     "mongo"
   ],
-  "author": "Deepanshi Dey",
+  "author": "Nisha Singh",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Deepanshi03/re_thread/issues"
-  },
-  "homepage": "https://github.com/Deepanshi03/re_thread#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",

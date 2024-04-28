@@ -18,6 +18,7 @@ import Profile from './Profile';
 import Orders from './Orders';
 import ModifyUserDetails from './ModifyUserDetails';
 import ResellItem from './ResellItem';
+import Subcategory from './Subcategory';
 
 
 // Create AppContext
@@ -54,6 +55,7 @@ function App() {
           <Route path="/resellitem/:id" element={<ResellItem />} />
           <Route path="/products/:category/:subcat" element={<Products />} />
           <Route path="/sell" element={<Sell />} />
+          <Route path="/subcategory/:id" element={<Subcategory />} />
           <Route path="/selling-form" element={<SellingForm />} />
           <Route path="/item/:id" element={<Item/>} />
           <Route path="/cart" element={<Cart />} />

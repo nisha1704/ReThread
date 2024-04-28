@@ -90,7 +90,7 @@ export default function Navbar() {
 
 
           <IconButton className={currentButton === 'cart' ? 'current' : ''} color="inherit" component={Link} to='/cart' onClick={() => handleButtonClick('cart')}>
-            <Badge badgeContent={user.resell_cart.length+user.cart.length} color="error">
+            <Badge color="error">
               <ShoppingCartIcon />
             </Badge>
           </IconButton>

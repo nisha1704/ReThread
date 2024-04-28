@@ -122,8 +122,8 @@ function Cart() {
         {/* Bottombar */}
         <div style={{ flex: 0.4, padding: '20px 20px 20px 50px', height: '100vh', backgroundColor: 'white', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)' }}>
           <Typography variant="h4" style={{ marginBottom: '20px', marginTop: '10px', textAlign: 'center' }}>Order Summary</Typography>
-          <Typography variant="body1" style={{ textAlign: 'center' }}>Total Price: Rs {user.cart.length+user.resell_cart.length}</Typography>
-          <Typography variant="body1" style={{ textAlign: 'center' }}>Quantity: {cartItems.length}</Typography>
+          <Typography variant="body1" style={{ textAlign: 'center' }}>Total Price: Rs {totalPrice}</Typography>
+          <Typography variant="body1" style={{ textAlign: 'center' }}>Quantity: {user.cart.length+user.resell_cart.length}</Typography>
           {console.log(totalQuantity)}
           {/* Ordered List of Product Titles */}
           <Typography variant="h5" style={{ marginTop: '20px', marginBottom: '10px', marginLeft: '25px' }}>Products in Cart:</Typography>

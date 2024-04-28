@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 import gliterback from "./gliterback.jpg"
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -24,6 +25,7 @@ function Login() {
     password: "",
     type: 0,
   });
+  const navigate = useNavigate();
   const handleAccountTypeClick = (type) => {
     setAccountType(type);
     setCred(prevData => ({
@@ -43,8 +45,10 @@ function Login() {
       setUser(await response.data.user);
       console.log(user);
       notify();
+      setTimeout(()=>navigate("/profile"), 3000);
     } catch (error) {
       console.error('Login error:', error.response.data);
+      toast.error("Email, Password or Account Type is incorrect...");
     }
   };
 
@@ -177,7 +181,7 @@ function Login() {
             <CardContent sx={{ width: 400, display: "flex", flexDirection: "Column", alignContent: "center" }}>
               <Typography sx={{ mb: 0.5, color: "black", fontSize: 25, fontFamily: "Roboto", textAlign: "center" }} color="text.secondary">Login</Typography>
               <TextField name="email" value={cred.email} onChange={handleChange} id="outlined-basic" label="Email" variant="outlined" sx={{ alignContent: "center", marginTop: 2 }} />
-              <TextField name="password" value={cred.password} onChange={handleChange} id="outlined-basic" label="Password" variant="outlined" sx={{ alignContent: "center", marginTop: 2 }} />
+              <TextField type='password' name="password" value={cred.password} onChange={handleChange} id="outlined-basic" label="Password" variant="outlined" sx={{ alignContent: "center", marginTop: 2 }} />
               <Button sx={{
                 backgroundColor: '#4d3d18',
                 color: 'white',

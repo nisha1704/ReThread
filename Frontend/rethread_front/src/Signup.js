@@ -14,9 +14,10 @@ import './Login.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
-
+  const navigate = useNavigate();
   const [accountType, setAccountType] = useState('');
   const [details, setDetails] = useState({
     user_name:"",
@@ -43,7 +44,7 @@ function Login() {
       [name]: value
     }));
   }
-  const notify = () => toast.success("Signed In Successfully!");
+  const notify = () => toast.success("Signed Up Successfully!");
 
   const handleSignup = async () => {
     console.log(details);
@@ -53,6 +54,7 @@ function Login() {
       // Display success message
       toast.success(response.data);
       notify();
+      setTimeout(()=>navigate("/login"), 3000);
     } catch (error) {
       // Display error message if request fails
       console.log(error);

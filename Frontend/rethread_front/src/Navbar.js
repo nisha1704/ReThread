@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css'
 
 export default function Navbar() {
-  const  {totalQuantity}  = useContext(AppContext);
+  const {user} = useContext(AppContext);
   const [currentButton, setCurrentButton] = useState(''); // State to keep track of the current button
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -53,7 +53,7 @@ export default function Navbar() {
           </NavLink>
 
           <NavLink to="/resell-products" style={{ textDecoration: 'none', color: 'black' }}>
-            <Button className={currentButton === 'shop' ? 'current' : ''} color="inherit" sx={{ color: 'black', fontWeight: 'bold', mx: 2 }} onClick={() => handleButtonClick('shop')}>
+            <Button className={currentButton === 'resell-product' ? 'current' : ''} color="inherit" sx={{ color: 'black', fontWeight: 'bold', mx: 2 }} onClick={() => handleButtonClick('resell-product')}>
               Resell Products
             </Button>
           </NavLink>
@@ -76,7 +76,7 @@ export default function Navbar() {
             </Button>
           </NavLink>
 
-          <NavLink to="/signup" style={{ textDecoration: 'none', color: 'black' }}>
+          {user.email==="" && <><NavLink to="/signup" style={{ textDecoration: 'none', color: 'black' }}>
             <Button className={currentButton === 'signup' ? 'current' : ''} color="inherit" sx={{ color: "black", fontWeight: 'bold', backgroundColor: 'lightgrey', mx: 1 }} onClick={() => handleButtonClick('signup')}>
               Sign Up
             </Button>
@@ -86,11 +86,11 @@ export default function Navbar() {
             <Button className={currentButton === 'login' ? 'current' : ''} color="inherit" sx={{ color: "black", fontWeight: 'bold', backgroundColor: 'lightgray', mx: 1 }} onClick={() => handleButtonClick('login')}>
               Login
             </Button>
-          </NavLink>
+          </NavLink></>}
 
 
           <IconButton className={currentButton === 'cart' ? 'current' : ''} color="inherit" component={Link} to='/cart' onClick={() => handleButtonClick('cart')}>
-            <Badge badgeContent={totalQuantity} color="error">
+            <Badge badgeContent={user.resell_cart.length+user.cart.length} color="error">
               <ShoppingCartIcon />
             </Badge>
           </IconButton>

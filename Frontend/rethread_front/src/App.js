@@ -17,8 +17,6 @@ import PageNotFound from './PageNotFound';
 import Profile from './Profile';
 import Orders from './Orders';
 import ModifyUserDetails from './ModifyUserDetails';
-import ModifyProductDetails from './ModifyProductDetails';
-import Subcategory from './Subcategory';
 import ResellItem from './ResellItem';
 
 
@@ -57,7 +55,6 @@ function App() {
           <Route path="/products/:category/:subcat" element={<Products />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/selling-form" element={<SellingForm />} />
-          <Route path="/subcategory/:id" element={<Subcategory />} />
           <Route path="/item/:id" element={<Item/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/signup" element={<Signup />} />
@@ -65,7 +62,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/my-orders" element={<Orders />} />
           <Route path="/modify-user-details" element={<ModifyUserDetails />} />
-          <Route path="/modify-product-details" element={<ModifyProductDetails />} />
+          {/* <Route path="/modify-product-details" element={<ModifyProductDetails />} /> */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </AppContext.Provider>

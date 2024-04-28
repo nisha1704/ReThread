@@ -219,89 +219,6 @@ const Products = mongoose.model("products", ProductSchema);
 const Users = mongoose.model("users", UserSchema);
 const Resell = mongoose.model("resell", ResellSchema);
 
-//*****************************  Sample document entries ****************************/
-// const product1 = new Products({
-//   product_name: "Long Trench Coat",
-//   category:"women",
-//   sub_cat:"coats",
-//   size: "M",
-//   color: "Grey",
-//   material:"Wool",
-//   brand:"Athena",
-//   price: 450
-// });
-
-// const user1 = new Users({
-//   user_name: "user1",
-//   email: "user1@example.com",
-//   contact:9395208190,
-//   address:"Guwahati",
-//   earning:0,
-//   cart:[],
-//   orders:[]
-// });
-
-// const user2 = new Users({
-//   user_name: "user2",
-//   email: "user2@example.com",
-//   contact:9345208198,
-//   address:"Delhi",
-//   earning:120,
-//   cart:["Running Shoes","Heeled Boots"],
-//   orders:[]
-// });
-
-// const resell1 = new Resell({
-//   user_name: "user2",
-//   product_name:"Printed T-Shirt",
-//   description:"Tshirt with stunning Planet Prints",
-//   size:"S",
-//   color:"Blue",
-//   condition:"Excellent",
-//   reason:"Didn't fit",
-//   material:"Cotton",
-//   brand:"Kinsey",
-//   shipping_method:"Local Delivery",
-//   mrp:500,
-//   resell_price:250
-// });
-
-// const resell2 = new Resell({
-//   user_name: "user1",
-//   product_name:"Formal Blazer",
-//   description:"Slim Fit Black Formal Blazer",
-//   size:"M",
-//   color:"Black",
-//   condition:"Excellent",
-//   reason:"Didn't use much",
-//   material:"Polyester",
-//   brand:"Mast & Harbour",
-//   shipping_method:"Speed Post",
-//   mrp:700,
-//   resell_price:340
-// });
-
-// ************************* Add sample documents to the database ***************************
-// const addDocsToDB = async () => {
-//   try {
-//     await product1.save();
-//     console.log("Product 1 added successfully!");
-
-//     await user1.save();
-//     console.log("User 1 added successfully!");
-//     await user2.save();
-//     console.log("User 2 added successfully!");
-
-//     await resell1.save();
-//     console.log("Resell Product 1 added successfully!");
-//     await resell2.save();
-//     console.log("Resell Product 2 added successfully!");
-
-//   } catch (error) {
-//     console.error("Error adding users:", error);
-//   }
-// };
-// addDocsToDB();
 
 // ***********************************List of Possible Routes*********************************
 //***************************************** GET *******************************************
@@ -359,15 +276,7 @@ app.get("/all-resell-products",async(req,res)=>{
   }
 });
 
-// Route for all Reselling submissions Page
-app.get("/resell-storage",async(req,res)=>{
-  try {
-    const doc = await Resell.find();
-    res.json(doc);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+
 
 // Route to view to perticular user by Id
 app.get("/user-by-id/:id", async (req, res) => {
@@ -384,20 +293,7 @@ app.get("/user-by-id/:id", async (req, res) => {
   }
 });
 
-// Route to view to perticular user by Contact
-app.get("/user-by-contact/:contact", async (req, res) => {
-  try {
-    const contact = req.params.contact;
-    const user = await Users.findOne({contact: contact});
-    if (user) {
-      res.json(user);
-    } else {
-      res.status(404).send('User not found');
-    }
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+
 
 // Route for category's products
 app.get("/:category/products", async (req, res) => {

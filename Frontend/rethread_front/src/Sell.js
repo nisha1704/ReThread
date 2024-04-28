@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from './Navbar'
 import maintop from "./maintop.png";
 import s1 from './s1.png'
@@ -10,9 +10,12 @@ import arrow from './arrow.png'
 import { Button } from '@mui/material';
 import './Sell.css'
 import { Link } from "react-router-dom"
-import Footer from './Footer'
+import Footer from './Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import { AppContext } from './App';
 
 function Sell() {
+  const { user } = useContext(AppContext);
   return (
     <>
       <div>
@@ -41,7 +44,7 @@ function Sell() {
             <img className="zoom-image" src={s5} alt="Image 5" style={{ width: '11%', height: 210, marginLeft: 10, transition: 'transform 0.3s', cursor: 'pointer' }} />
           </div>
 
-          <Link to="/selling-form" style={{ textDecoration: 'none', color: 'white' }}>
+          {(user.email!=="" && user.type==1) ? <Link to="/selling-form" style={{ textDecoration: 'none', color: 'white' }}>
             <Button sx={{
               backgroundColor: '#4d3d18',
               color: 'white',
@@ -58,7 +61,24 @@ function Sell() {
               fontWeight: 'bold',
             }}>Get Started
             </Button>
-          </Link>
+          </Link>:<div style={{ textDecoration: 'none', color: 'white' }}>
+            <Button sx={{
+              backgroundColor: '#4d3d18',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: '#3b2e12',
+                justifyContent: 'center'
+              },
+              padding: '10px 20px',
+              borderRadius: '5px',
+              width: '110%',
+              marginTop: 3,
+              marginBottom: 3,
+              fontSize: '16px',
+              fontWeight: 'bold',
+            }}>Login as Admin to access...
+            </Button>
+          </div>}
         </div>
       </div>
       <Footer />

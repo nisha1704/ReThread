@@ -5,11 +5,11 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './item.css'
 import { AppContext } from './App';
-const domain = process.env.REACT_APP_DOMAIN
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function ResellItem() {
-    const { email } = useContext(AppContext);
+    const { user } = useContext(AppContext);
     const { id } = useParams(); // Get the product ID from URL parameters
     const [product, setProduct] = useState(null); // State to store product details
     const [selectedImage, setSelectedImage] = useState(null); // State to track selected image
@@ -18,7 +18,8 @@ function ResellItem() {
     const [zoomedImagePosition, setZoomedImagePosition] = useState({ x: 0, y: 0 });
 
     const handleAddToCart = () => {
-        axios.get("http://localhost:10000/addResellCart/"+"ak23amit@gmail.com"+"/"+product._id)
+        if(user.email === ""){ toast.error("Please Login First!"); return;}
+        axios.get("http://localhost:10000/addResellCart/"+user.email+"/"+product._id)
         .then((response) => {
             console.log(response.data);
           })
@@ -151,7 +152,7 @@ function ResellItem() {
                     <h2>{product.product_name}</h2>
 
                     {/* Product Price */}
-                    <h3>Price: {product.price} Rs</h3>
+                    <h3>Price: {product.resell_price} Rs</h3>
 
                     {/* Product Details */}
                     <h3>Product Details</h3>
@@ -180,39 +181,16 @@ function ResellItem() {
                                 fontSize: '16px',
                                 fontWeight: 'bold',
                                 alignItems: 'center',
-                                width: '110%',
+                                width: '180px',
                                 display: 'block',
                             }}>
                                 ADD TO CART
                             </Button>
-                        {/* </Link> */}
-
-                        <Link to="/checkout" style={{ textDecoration: 'none', color: 'inherit' }}>
-                            <Button sx={{
-                                backgroundColor: 'white',
-                                color: '#4d3d18',
-                                border: '2px solid #4d3d18',
-                                '&:hover': {
-                                    backgroundColor: '#f0f0f0',
-                                },
-                                padding: '10px 20px',
-                                borderRadius: '5px',
-                                marginTop: '5px',
-                                marginBottom: '20px',
-                                fontSize: '16px',
-                                fontWeight: 'bold',
-                                alignItems: 'center',
-                                marginLeft: '-8px',
-                                width: '130%',
-                                display: 'block',
-                            }}>
-                                BUY NOW
-                            </Button>
-                        </Link>
                     </div>
                 </div>
             </div>
             <Footer />
+            <ToastContainer />
         </>
     );
 }

@@ -65,13 +65,14 @@ function Resell() {
   return (
     <>
       <div style={{ display: 'flex', minHeight: '100vh' }}>
-        <div style={{ width: '100%%', backgroundColor: '#f0f0f0', padding: '20px', alignContent: 'center', alignItems: 'center', height: '100%', overflowY: 'auto' }}>
+        <div style={{ width: '100%', backgroundColor: '#f0f0f0', padding: '20px', alignContent: 'center', alignItems: 'center', height: '100%', overflowY: 'auto' }}>
           <Box
             style={{
               backgroundColor: 'white',
               boxShadow: '0 5px 5px rgba(0, 0, 0, 0.3)',
               height: 'fit-content',
               overflowY: 'hidden',
+              minHeight: '100vh',
             //   width: '100vw',
               flexDirection: 'row',
               padding: '10px',

@@ -25,14 +25,17 @@ function Cart() {
     console.log(await proResell);
     const resResell = await proResell.data;
     console.log(await res);
+    let count=0;
     res.map(async(val)=>{
       let data = await axios.get("http://localhost:10000/product-by-id/"+await val);
       console.log(data.data);
+      count++;
       setCartItems(prev => [...prev, {title: data.data.product_name, image: data.data.front_img, price: data.data.price, size: 's'}]);
     });
     resResell.map(async(val)=>{
       let data = await axios.get("http://localhost:10000/resell-by-id/"+await val);
       console.log(data.data);
+      count++;
       setCartItems(prev => [...prev, {id: data.data._id, title: data.data.product_name, image: data.data.img_front, price: data.data.resell_price, size: data.data.size}]);
     });
   }
@@ -68,7 +71,7 @@ function Cart() {
   const handleDeleteResellItem = async (id) => {
     const res = await axios.get("http://localhost:10000/deleteResellCart/"+user.email+"/"+id);
     updateCart();
-    setCartItems(prev => prev.filter(val => id===val.id));
+    setCartItems(prev => prev.filter(val => id!==val.id));
   };
 
   return (
@@ -85,7 +88,12 @@ function Cart() {
         justifyContent: 'space-between', // Align items to flex-end
       }}>
         <div style={{ flex: 1, padding: '20px' }}>
-          {user.email==="" ? <div style={{color: 'red'}}>Please Login</div> : <>{cartItems.length === 0 ? (
+          {user.email==="" ? <Card>
+              <CardContent>
+                <img src={empty} alt="Empty Cart" style={{ width: '60%', marginTop: '-35px', marginLeft: '280px' }} />
+                <h1 style={{ textAlign: 'center', marginTop: '-35px' }}>Please Login!!</h1>
+              </CardContent>
+            </Card> : <>{cartItems.length === 0 ? (
             // Render empty cart image when the cart is empty
             <Card>
               <CardContent>
@@ -114,8 +122,8 @@ function Cart() {
         {/* Bottombar */}
         <div style={{ flex: 0.4, padding: '20px 20px 20px 50px', height: '100vh', backgroundColor: 'white', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)' }}>
           <Typography variant="h4" style={{ marginBottom: '20px', marginTop: '10px', textAlign: 'center' }}>Order Summary</Typography>
-          <Typography variant="body1" style={{ textAlign: 'center' }}>Total Price: Rs {totalPrice}</Typography>
-          <Typography variant="body1" style={{ textAlign: 'center' }}>Quantity: {totalQuantity}</Typography>
+          <Typography variant="body1" style={{ textAlign: 'center' }}>Total Price: Rs {user.cart.length+user.resell_cart.length}</Typography>
+          <Typography variant="body1" style={{ textAlign: 'center' }}>Quantity: {cartItems.length}</Typography>
           {console.log(totalQuantity)}
           {/* Ordered List of Product Titles */}
           <Typography variant="h5" style={{ marginTop: '20px', marginBottom: '10px', marginLeft: '25px' }}>Products in Cart:</Typography>

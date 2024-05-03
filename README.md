@@ -4,7 +4,7 @@
 <ol type="1">
   <li>Clone this project into your dev environment..</li>
   <li>Go to the backend folder and run "npm install" to install necessary modules.</li>
-  <li>To run the server, run "node ./routes_and_Conn.js" inside the backend foldeer.</li>
+  <li>To run the server, run "node ./routes_and_Conn.js" inside the backend folder.</li>
   <li>Now move to the rethread_front inside the frontend folder.</li>
   <li>Then run "npm install" to install necessary modules.</li>
   <li>To start a local development server for react, run "npm start".</li>

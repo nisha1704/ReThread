@@ -1,5 +1,6 @@
-<h1>Created this project with Love ❤️</h1> 
+<h1>Created this project with Love <img width="50px" src="https://cdn.pixabay.com/animation/2022/07/30/10/38/10-38-40-340_512.gif" /></h1> 
 <p>This project is created as an assignment for my React JS Course.</p>
+
 <h3>Steps to run this project..</h3>
 <ol type="1">
   <li>Clone this project into your dev environment..</li>
